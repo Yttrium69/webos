@@ -1,0 +1,828 @@
+//font_pretendard(subsets only)
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+
+//default_element
+$rem_unit: 64px;
+
+//sizes
+$page_width: 67.5rem;
+$margin-top: 5rem;
+
+// colors
+$background: #ECEFF3;
+$blue: #3D57E2;
+$black: #32353C;
+$line_gray: #DCE1E8;
+$font_gray: #717A8C;
+$caution: #F53C3C;
+$input_background: #EFF2F4;
+
+//lines
+$gray_line: 1px solid $line_gray;
+
+//effects
+$card_shadow: 0px 4px 8px 0px rgba(161, 170, 179, 0.30);
+
+
+//components > fonts
+@mixin font_large($color: $black) {
+    color: $color;
+    font-family: 'Pretendard';
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+@mixin font_default($color: $black) {
+    color: $color;
+    font-family: Pretendard;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 170.336%;
+}
+
+@mixin font_bold($color) {
+    color: $color;
+    font-family: Pretendard;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 170.336%;
+}
+
+@mixin font_small($color: $black) {
+    color: $color;
+    font-family: Pretendard;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.02188rem;
+}
+
+@mixin font_tiny($color) {
+    color: $color;
+    font-family: Pretendard;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.01875rem;
+}
+
+//components >> buttons
+@mixin btn_filled($color: $blue, $width: "hug") {
+    display: inline-flex;
+    height: 3.125rem;
+    padding: 0.9375rem 1.375rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    border-radius: 0.3125rem;
+    background-color: $blue;
+    border: none;
+    @include font_bold(#fff);
+    transition: 0.3s;
+
+    @if($width =="fill") {
+        display: flex;
+        width: 100%;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: #576de9;
+    }
+}
+
+@mixin btn_lined($color: $blue, $width: "hug") {
+    display: inline-flex;
+    height: 3.125rem;
+    padding: 0.9375rem 1.375rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    border-radius: 0.3125rem;
+    background-color: #fff;
+    border: 1px solid $blue;
+    @include font_default($blue);
+    transition: 0.3s;
+
+    @if($width =="fill") {
+        display: flex;
+        width: 100%;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: #edeff8;
+    }
+}
+
+//components >> card
+@mixin card() {
+    display: inline-flex;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+    border-radius: 0.625rem;
+    background: #FFF;
+    box-shadow: $card_shadow;
+}
+
+@mixin container($width, $height) {
+    width: $width;
+    height: $height;
+    overflow: hidden;
+    border: $gray_line;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@mixin info_card() {
+    @include card();
+    width: 19.5rem;
+    gap: 2rem;
+    box-sizing: border-box;
+
+    .img_name_pack {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .img_container {
+            @include container(3.75rem, 3.75rem);
+            border-radius: 3rem;
+        }
+
+        .title {
+            @include font_large($black);
+        }
+    }
+
+    .texts_container {
+        display: flex;
+        row-gap: 0.75rem;
+        flex-direction: column;
+
+        .label_content_pack {
+            display: flex;
+            column-gap: 0.75rem;
+
+            .label {
+                @include font_bold($black);
+                flex-shrink: 0;
+            }
+
+            .content {
+                @include font_default($black);
+            }
+        }
+    }
+
+    .QR_container {
+        .img_container {
+            @include container(3.5rem, 3.5rem);
+            border: none;
+        }
+
+    }
+}
+
+@mixin dot() {
+    width: 2rem;
+    height: 2rem;
+    opacity: 0.5;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 0, 0, 0.00) 0%, rgba(255, 0, 0, 0.50) 100%);
+    border-radius: 30rem;
+
+    .inner_dot {
+        width: 1rem;
+        height: 1rem;
+        margin-top: 0.5rem;
+        margin-top: 0.5rem;
+        border: 0.5rem solid #F53C3C;
+        background: #FFF;
+        border-radius: 30rem;
+    }
+}
+
+@mixin time_container($percentage){
+    @include container(10.8125rem, auto);
+    border: none;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .texts_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+        .label{
+            @include font_tiny($font_gray);
+        }
+        .time{
+            @include font_large($black);
+        }
+    }
+    .time_bar{
+        width: 8rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+        flex-direction: column;
+        height: 1rem;
+        margin: auto;
+        margin-top: 0.5rem;
+
+        .back{
+            width: 100%;
+            height: 0.25rem;
+            border-radius: 10rem;
+            background: linear-gradient(90deg, #4CDE18 0%, #FFEA31 50%, #FF0F00 100%);
+            margin: auto;
+            left: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .fore{
+            position: absolute;
+            right: 0;
+            width: calc(100% - #{$percentage});
+            height: 0.25rem;
+            background-color: #DCE0E6;
+            top: 50%;
+            transform: translateY(-50%);
+            border-bottom-right-radius: 10rem;
+            border-top-right-radius: 10rem;
+            border: 0.2rem solid #FFF;
+        }
+        .time_dot{
+            width: 0.4rem;
+            height: 0.4rem;
+            background-color: #ff9531;
+            border: 0.25rem solid #ffffff;
+            border-radius: 120rem;
+            position: absolute;
+            overflow: visible;
+            box-shadow: 0px 0px 0.25rem 0px rgba(161, 170, 179, 0.50);
+            left: $percentage;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@mixin page(){
+    overflow-x: hidden;
+    width: $page_width;
+    margin: auto;
+    margin-top: $margin_top;
+    margin-bottom: $margin-top;
+    background-color: $background;
+}
+
+@mixin video_container(){
+    position: relative;
+    .cur_time{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $caution;
+        @include font_tiny(#FFF);
+        padding: 0.25rem;
+    }
+    .video_container{
+        width: 100%;
+        height: auto;
+        min-height: 37rem;
+        overflow: hidden;
+        background-color: #717A8C;
+    }
+    .btn_container{
+        position: absolute;
+        right: 0.75rem;
+        top: 1rem;
+        button{
+            border: 1px solid #FFF;
+            @include font_default(#FFF);
+            background-color: rgba(255, 255, 255, 0.30);
+            border-radius: 10rem;
+            width: 6.625rem;
+            height: 2.5rem;
+        }
+    }
+}
+
+@mixin input(){
+    background-color: $input_background;
+    padding: 0.5rem 0.75rem;
+    box-sizing: border-box;
+    border-radius: 0.13rem;
+    border: none;
+    outline: none;
+    @include font_default($black);
+
+
+}
+
+@mixin textarea(){
+    @include input();
+    display: block;
+    resize: none;
+    min-height: 12.5rem;
+    width: calc(100% - 1.5rem);
+}
+
+@mixin label_input_pack($width){
+    width: $width;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    .label{
+        @include font_default($black);
+    }
+    input{
+        width: 100%;
+        @include input();
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    color: $black;
+}
+
+button {
+    @include btn_lined($blue, "hug")
+}
+
+.card {
+    @include card();
+}
+
+html {
+    font-size: $rem_unit;
+}
+
+body {
+    background-color: $background;
+}
+
+.hide {
+    display: none;
+}
+
+//index.html
+#page_index {
+    display: grid;
+    grid-template-columns: min-content auto min-content;
+    width: $page_width;
+    margin: auto;
+    margin-top: $margin-top;
+
+    .grid_left {
+        #info_card {
+            @include info_card();
+        }
+
+        .btn_container {
+            button {
+                @include btn_filled($blue, fill);
+            }
+
+            margin-top: 3rem;
+        }
+    }
+
+    .grid_center {
+
+        .dummy_dots_pack {
+            margin-left: 3rem;
+            width: 100%;
+            position: relative;
+
+            .img_container {
+                @include container(19rem, auto);
+                border: none;
+                margin: auto;
+                position: absolute;
+            }
+
+            .dots_container {
+                position: absolute;
+
+                .dot {
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 2rem;
+                    height: 2rem;
+                    // opacity: 0.5;
+                    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 0, 0, 0.00) 0%, rgba(255, 0, 0, 0.250) 100%);
+                    border-radius: 30rem;
+
+                    .inner_dot {
+                        width: 0.25rem;
+                        height: 0.25rem;
+                        border: 0.25rem solid #F53C3C;
+                        background: #FFF;
+                        border-radius: 30rem;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .grid_right {
+        .time_notifications_pack {
+            @include card();
+            width: 19.5rem;
+
+            .time_container {
+                @include time_container(70%);
+            }
+
+            .notifications_pack {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
+                height: 19rem;
+                overflow-y: scroll;
+
+                .notification {
+                    padding: 1rem 0.75rem;
+                    border: $gray_line;
+                    border-radius: 0.31rem;
+                    background-color: #FFF;
+                    position: relative;
+
+                    .x {
+                        position: absolute;
+                        right: 0.75rem;
+                        top: 0.75rem;
+                        width: 0.75rem;
+                        height: 0.75rem;
+                        cursor: pointer;
+                    }
+
+                    .texts_container {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 0.5rem;
+
+                        .category {
+                            @include font_tiny($blue);
+                        }
+
+                        .content {
+                            @include font_default($black);
+                        }
+
+                        .date {
+                            @include font_tiny($font_gray);
+                        }
+                    }
+
+                    .btn_container {
+                        width: 100%;
+                        margin-top: 0.5rem;
+
+                        button {
+                            @include btn_lined($blue, 'fill')
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//환자 상태 열람 page
+#page_show_list{
+    width: $page_width;
+    margin: auto;
+    margin-top: $margin_top;
+    margin-bottom: $margin-top;
+
+    .comp_show_status{
+        .status_cards_container{
+            display: flex;
+            margin: auto;
+            width: 30rem;
+            height: 10rem;
+            background-color: #FFF;
+            border-right: $line_gray;
+            border-radius: 0.63rem;
+            overflow: hidden;
+
+            .status_card{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                row-gap: 0.5rem;
+                &:not(:last-child){
+                    border-right: $gray_line;
+                }
+
+                .img_container{
+                    @include container(3.125rem, 3.125rem);
+                    border: none;
+                }
+                .label{
+                    @include font_small($black);
+                }
+                .cnt{
+                    @include font_large($black);
+                }
+                &.bad{
+                    .label, .cnt{
+                        color: $caution;
+                    }
+                }
+            }
+        }
+    }
+
+    .comp_show_list{
+        margin-top: 3rem;
+        .title_container{
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            .title{
+                @include font_large($black);
+            }
+            .add_member{
+                @include font_small($blue);
+                text-decoration: none;
+            }
+        }
+        .bad_notbad_pack{
+
+            .notbad, .bad{
+                &.title_grid_pack{
+                    margin-top: 2rem;
+                }
+                .title{
+                    @include font_default($font_gray);
+                }
+                .member_cards_container{
+                    margin-top: 1.5rem;
+                    display: grid;
+                    grid-template-columns: minmax(16.25rem, auto) minmax(16.25rem, auto) minmax(16.25rem, auto) minmax(16.25rem, auto) ;
+                    grid-gap: 1rem;
+
+                    .member_card{
+                        @include card();
+                        padding: 1rem 0.75rem;
+
+                        .img_name_pack{
+                            display: flex;
+                            gap: 0.5rem;
+                            align-items: center;
+                            .img_container{
+                                @include container(2rem, 2rem);
+                                border-radius: 10rem;
+                            }
+                            .name{
+                                cursor: pointer;
+                            }
+                            .text_icon_pack{
+                                display: flex;
+                                gap: 0.5rem;
+                                cursor: pointer;
+                                .text{
+                                    @include font_bold($black);
+                                }
+                                .icon{
+                                    img{
+                                        width: 0.25rem;
+                                        //height: 0.5rem;
+                                    }
+                                }
+                            }
+                        }
+                        .time_container{
+                            @include time_container(70%);
+                        }
+                        .btns_container{
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            gap: 0.5rem;
+                            //.backwork{@include btn_lined($blue, "fill");}
+                            .streaming{@include btn_filled($blue);}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+#page_streaming{
+    @include page();
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: minmax(44rem, auto) 19.5rem;
+
+    align-items: start;
+    .grid_left{
+        width: 100%;
+        .video_curtime_btn_pack{
+            @include video_container();
+        }
+    }
+    .grid_right{
+        #info_card{
+            @include info_card();
+            width: 19.5rem;
+        }
+        .btns_container{
+            margin-top: 1rem;
+            width: 100%;
+            .backwork{
+                @include btn_filled($blue, "fill");
+            }
+            .write_comment{
+                margin-top: 0.5rem;
+                @include btn_lined($blue, "fill");
+            }
+        }
+    }
+}
+
+
+#page_write_comment{
+    @include page();
+    display: grid;
+    grid-template-columns: minmax(44rem, auto) 19.5rem;
+    column-gap: 1rem;
+    align-items: start;
+    .grid_left{
+        @include card();
+        .title{
+            @include font_large($black);
+        }
+        .contents{
+            width: 100%;
+            .input_comment{
+                @include textarea();
+            }
+            .label_content_pack{
+                display: flex;
+                gap: 1rem;
+                margin-top: 1rem;
+                .label{
+                    @include font_bold($black);
+                }
+                .content{
+                    @include font_default(#979797)
+                }
+            }
+            .btns_container{
+                display: flex;
+                gap: 0.5rem;
+                justify-content: center;
+                margin-top: 1rem;
+                .write_comment{
+                    @include btn_filled($blue);
+                }
+            }
+        }
+    }
+    .grid_right{
+        @include info_card();
+    }
+}
+
+
+#page_add_member{
+    @include page();
+    display: grid;
+    grid-template-columns:  minmax(44rem, auto) 19.5rem;
+    column-gap: 1rem;
+    align-items: start;
+    .grid_left{
+        @include card();
+        .title{
+            @include font_large($black);
+        }
+        .contents{
+            .inputs_container{
+                display: flex;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 1rem;
+                flex-grow: 1;
+                flex-wrap: wrap;
+                .label_input_pack{
+                    @include label_input_pack(18rem);
+                    &.radio{
+                        .radios{
+                            display: flex;
+                            flex-shrink: 0;
+                            justify-content: flex-start;
+                        }
+                        span{
+                            display: inline;
+                            width: 100%;
+                        }
+                        input{
+                            display: inline;
+                            background-color: gray;
+                        }
+                    }
+                }
+            }
+            .btns_container{
+                display: flex;
+                gap: 0.5rem;
+                justify-content: center;
+                margin-top: 1rem;
+                .add_member{
+                    @include btn_filled($blue);
+                }
+            }
+        }
+    }
+    .grid_right{
+        @include info_card();
+    }
+}
+
+
+#page_backwork{
+    @include page();
+    display: grid;
+    grid-template-columns:  minmax(44rem, auto) 19.5rem;
+    column-gap: 1rem;
+    align-items: start;
+    .grid_left{
+        width: 100%;
+        .video_curtime_btn_pack{
+            @include video_container();
+        }
+        .controllers_container{
+            display: flex;
+            gap: 1rem;
+            position:absolute;
+            bottom: 5rem;
+            left: 50%;
+            transform: translateX(-50%);
+
+            .controller{
+                cursor: pointer;
+            }
+        }
+    }
+    .grid_right{
+        #info_card{
+            @include info_card();
+            width: 19.5rem;
+        }
+    }
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    background: $background;
+    height: 3rem;
+    padding: 1rem;
+
+    .nav_list{
+        width: 30rem;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        a{
+            @include font_default($black);
+            cursor: pointer;
+            &:hover{
+                @include font_bold($black);
+            }
+        }
+    }
+
+}
