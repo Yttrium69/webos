@@ -39,10 +39,18 @@
 		"@enact/spotlight": "^4.7.6",
 		"@enact/ui": "^4.7.6",
 		"@enact/webos": "^4.7.6",
+		"@yudiel/react-qr-scanner": "^1.1.10",
+		"global": "^4.4.0",
 		"ilib": "npm:ilib-webos@^14.18.0-webos1",
+		"jquery": "^3.7.1",
 		"prop-types": "^15.8.1",
+		"qr": "^0.2.4",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
+		"react-qr-reader": "^3.0.0-beta-1",
+		"react-qr-scanner": "^1.0.0-alpha.11",
+		"react-router-dom": "^6.17.0",
+		"scanner": "^0.0.7",
 		"web-vitals": "^3.4.0"
 	},
 	"devDependencies": {

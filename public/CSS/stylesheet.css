@@ -1,4 +1,36 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css");
+.page_QR {
+  margin-top: 5rem;
+  overflow-y: hidden;
+}
+.page_QR svg {
+  display: none;
+}
+.page_QR .address_span {
+  color: #32353C;
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 170.336%;
+  margin: auto;
+  text-align: center;
+}
+.page_QR div {
+  display: flex;
+  justify-content: center;
+}
+.page_QR a {
+  color: #3D57E2;
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 170.336%;
+  display: block;
+  text-align: center;
+}
+
 * {
   margin: 0;
   padding: 0;
