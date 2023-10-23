@@ -1,43 +1,49 @@
 import React from "react";
+import {ps} from '../../public/ps';
 
-function Info_card(){
+function Info_card(props){
+    const p_json = ps[props.name];
+    console.log(p_json)
+    
+    let gender="남성"
+    if(p_json.info.gender == 'f') gender = "여성";
     return(
         <div id="info_card">
                     <div className="img_name_pack">
                         <div className="img_container">
-                            <img src="img/profiles/김철산/profile.png"/>
+                            <img src={"img/profiles/"+p_json.name+"/profile.png"}/>
                         </div>
-                        <div className="title">김철산 환자</div>
+                        <div className="title">{p_json.name} 환자</div>
                     </div>
                     <div className="texts_container">
                         <div className="label_content_pack gender">
                             <p className="label">성별</p>
-                            <p className="content">남성</p>
+                            <p className="content">{gender}</p>
                         </div>
                         <div className="label_content_pack age">
                             <p className="label">나이</p>
-                            <p className="content">만 85세</p>
+                            <p className="content">{p_json.info.age}세</p>
                         </div>
                         <div className="label_content_pack gender">
                             <p className="label">신장</p>
-                            <p className="content">172cm</p>
+                            <p className="content">{p_json.info.height}cm</p>
                         </div>
                         <div className="label_content_pack gender">
                             <p className="label">체중</p>
-                            <p className="content">62kg</p>
+                            <p className="content">{p_json.info.weight}kg</p>
                         </div>
                         <div className="label_content_pack gender">
                             <p className="label">입원기간</p>
-                            <p className="content">2023. 08. 14 ~ 2023. 09. 14</p>
+                            <p className="content">{p_json.info.period.start} ~ {p_json.info.period.end}</p>
                         </div>
                         <div className="label_content_pack gender">
                             <p className="label">병력</p>
-                            <p className="content">노환으로 인한 거동 불편</p>
+                            <p className="content">{p_json.info.history}</p>
                         </div>
                     </div>
                     <div className="QR_container">
                         <div className="img_container">
-                            <img src="img/profiles/김철산/QR.png"/>
+                            <img src={"img/profiles/"+p_json.name+"/QR.png"}/>
                         </div>
                     </div>
                 </div>

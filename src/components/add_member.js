@@ -1,6 +1,29 @@
 import React from "react";
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function Add_member(){
+
+    
+
+
+
     return(<div id="page_add_member">
     <div class="grid_left">
         <p class="title">환자 정보 입력</p>

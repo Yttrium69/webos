@@ -4,27 +4,27 @@ import Info_card from "../components/info_card";
 function Write_comment(){
     return(
         <div id="page_write_comment">
-    <div class="grid_left">
-        <p class="title">소견 작성</p>
-        <div class="contents">
-            <form method="post" action="/write_comment">
-                <input class="hide" value="kcs" name="name"/>
-                    <textarea class="input_comment" placeholder="환자에 대한 소견을 입력하세요." name="comment"></textarea>
-                <div class="label_content_pack">
-                    <div class="label">작성일자</div>
-                    <input class="hide" name="date" value="2023.10.04"/>
-                    <div class="content">2023.10.04</div>
+    <div className="grid_left">
+        <p className="title">소견 작성</p>
+        <div className="contents">
+            <form method="post" action="http://165.246.44.97:8080/api/write_comment">
+                <input className="hide" value="kcs" name="name"/>
+                    <textarea className="input_comment" placeholder="환자에 대한 소견을 입력하세요." name="comment"></textarea>
+                <div className="label_content_pack">
+                    <div className="label">작성일자</div>
+                    <input className="hide" name="date" value="2023.10.04"/>
+                    <div className="content">2023.10.04</div>
                 </div>
-                <div class="btns_container">
-                    <button type="submit" class="write_comment">소견 작성</button>
-                    <button onclick="location.href='/streaming?name=kcs'" type="button" class="back">돌아가기</button>
+                <div className="btns_container">
+                    <button type="submit" className="write_comment">소견 작성</button>
+                    <button onClick={()=>{window.location.href='/streaming'}} type="button" className="back">돌아가기</button>
                 </div>
             </form>
 
         </div>
     </div>
-    <div class="grid_right">
-        <Info_card></Info_card>
+    <div className="grid_right">
+        <Info_card name="kcs"></Info_card>
     </div>
 
 
