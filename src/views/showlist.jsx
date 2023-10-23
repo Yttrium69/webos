@@ -15,11 +15,11 @@ function Show_list() {
         const card = `<div class="member_card">
                             <div class="img_name_pack">
                                 <div class="img_container">
-                                    <img src="img//profiles/김철산/profile.png">
+                                    <img src="img//profiles/kcs/profile.png">
                                 </div>
-                                <div onclick="location.href='/show_detail?name=김철산'" class="text_icon_pack">
-                                    <p onclick="location.href='/show_detail?name=김철산'" class="text">김철산 환자</p>
-                                    <div onclick="location.href='/show_detail?name=김철산'" class="icon">
+                                <div onclick="location.href='/show_detail?name=kcs'" class="text_icon_pack">
+                                    <p onclick="location.href='/show_detail?name=kcs'" class="text">kcs 환자</p>
+                                    <div onclick="location.href='/show_detail?name=kcs'" class="icon">
                                         <img src="img//icons/next.svg">
                                     </div>
                                 </div>

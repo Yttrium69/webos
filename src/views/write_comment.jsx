@@ -8,7 +8,7 @@ function Write_comment(){
         <p class="title">소견 작성</p>
         <div class="contents">
             <form method="post" action="/write_comment">
-                <input class="hide" value="김철산" name="name"/>
+                <input class="hide" value="kcs" name="name"/>
                     <textarea class="input_comment" placeholder="환자에 대한 소견을 입력하세요." name="comment"></textarea>
                 <div class="label_content_pack">
                     <div class="label">작성일자</div>
@@ -17,7 +17,7 @@ function Write_comment(){
                 </div>
                 <div class="btns_container">
                     <button type="submit" class="write_comment">소견 작성</button>
-                    <button onclick="location.href='/streaming?name=김철산'" type="button" class="back">돌아가기</button>
+                    <button onclick="location.href='/streaming?name=kcs'" type="button" class="back">돌아가기</button>
                 </div>
             </form>
 
