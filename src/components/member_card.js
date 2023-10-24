@@ -41,7 +41,7 @@ function Member_card(props) {
 
             </div>
             <div className="btns_container">
-                <button  onClick={()=>{window.location.href="/backwork"}} className="backwork">Backwork</button>
+                <button  onClick={()=>{window.location.href="/qrscan"}} className="backwork">Backwork</button>
                 <button  onClick={()=>{window.location.href="/streaming"}} className="streaming">모니터링</button>
             </div>
         </div>

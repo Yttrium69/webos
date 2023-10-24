@@ -25,9 +25,9 @@ function Backwork(){
                 <button onClick={()=>{window.location.href='/'}} className="btn_back">돌아가기</button>
             </div>
             <div className="controllers_container">
-                <div onClick={()=>{ctrl_arm("l")}} className="controller left"><img src="img/icons/left.svg"/></div>
-                <div  onClick={()=>{ctrl_arm("p")}} className="controller pause"><img src="img/icons/pause.svg"/></div>
-                <div  onClick={()=>{ctrl_arm("r")}} className="controller right"><img src="img/icons/right.svg"/></div>
+                <div onClick={()=>{ctrl_arm("2")}} className="controller left"><img src="img/icons/left.svg"/></div>
+                <div  onClick={()=>{ctrl_arm("1")}} className="controller pause"><img src="img/icons/pause.svg"/></div>
+                <div  onClick={()=>{ctrl_arm("3")}} className="controller right"><img src="img/icons/right.svg"/></div>
             </div>
         </div>
     </div>

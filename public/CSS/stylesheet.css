@@ -313,7 +313,7 @@ body {
 #page_index .grid_right .time_notifications_pack .time_container .time_bar .fore {
   position: absolute;
   right: 0;
-  width: calc(100% - 70%);
+  width: percentage;
   height: 0.25rem;
   background-color: #DCE0E6;
   top: 50%;
@@ -627,7 +627,7 @@ body {
 #page_show_list .comp_show_list .bad_notbad_pack .notbad .member_cards_container .member_card .time_container .time_bar .fore, #page_show_list .comp_show_list .bad_notbad_pack .bad .member_cards_container .member_card .time_container .time_bar .fore {
   position: absolute;
   right: 0;
-  width: calc(100% - 70%);
+  width: percentage;
   height: 0.25rem;
   background-color: #DCE0E6;
   top: 50%;
@@ -1382,7 +1382,7 @@ body {
   height: 100%;
 }
 
-footer {
+.footer {
   position: fixed;
   bottom: 0;
   width: 100vw;
@@ -1390,13 +1390,13 @@ footer {
   height: 3rem;
   padding: 1rem;
 }
-footer .nav_list {
+.footer .nav_list {
   width: 30rem;
   display: flex;
   justify-content: space-between;
   margin: auto;
 }
-footer .nav_list a {
+.footer .nav_list p {
   color: #32353C;
   font-family: Pretendard;
   font-size: 1rem;
@@ -1405,7 +1405,7 @@ footer .nav_list a {
   line-height: 170.336%;
   cursor: pointer;
 }
-footer .nav_list a:hover {
+.footer .nav_list p:hover {
   color: #32353C;
   font-family: Pretendard;
   font-size: 1rem;

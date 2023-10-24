@@ -13,7 +13,6 @@ function Add_member() {
               <div className="label_input_pack">
                 <div className="label">이름</div>
                 <input
-                  type="url"
                   placeholder="이름을 입력하세요."
                   className="input name"
                   name="name"
@@ -31,6 +30,7 @@ function Add_member() {
               <div className="label_input_pack">
                 <div className="label">신장</div>
                 <input
+                                  type="number"
                   placeholder="신장을 입력하세요."
                   className="input height"
                   name="height"
@@ -39,6 +39,7 @@ function Add_member() {
               <div className="label_input_pack">
                 <div className="label">체중</div>
                 <input
+                                  type="number"
                   placeholder="체중을 입력하세요."
                   className="input weight"
                   name="weight"

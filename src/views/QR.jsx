@@ -48,10 +48,10 @@ function Qrpage(props) {
         videoStyle={video_style}
         constraints={"user"}
         onDecode={(result) => {
-          console.log(result);
           $("a").attr("href", result);
           $("a").text(result);
           post_qrcode(result);
+          window.location.href='/backwork';
         }}
         onError={(error) => console.log(error)}
       />

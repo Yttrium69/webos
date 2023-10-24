@@ -15,6 +15,7 @@ import Qrpage from "../views/QR";
 const App = function () {
   return (
     <div>
+      {/* <div className="top_nav" onClick={()=>{window.location.href = '/'}}> 메인으로</div> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Show_list />} />
@@ -29,6 +30,7 @@ const App = function () {
           ></Route>
         </Routes>
       </BrowserRouter>
+      <Nav></Nav>
     </div>
   );
 };
